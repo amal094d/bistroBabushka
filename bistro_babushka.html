@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <title>Babushka</title>
     <style>
-        body {}
-
-
         article {
             border: 1px solid #333;
             padding: 10px;
-            background-color: lightblue;
+            background-color: orangered;
             border-radius: 14px;
             font-family: "Made Saonara";
+
+        }
+
+        article h3 {
+            text-align: center;
+
         }
 
         img {
@@ -50,57 +53,71 @@
         }
 
         .valgt {
-            color: skyblue;
+            color: orangered;
         }
 
         #popup {
             position: fixed;
             left: 0;
-            top 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba (0, 0, 0, .8);
             display: none;
 
         }
 
         #popup article {
             width: 80vw;
-            height: 70vh;
+            height: 90vh;
             margin: 1rem auto;
             background-color: white;
             display: flex;
         }
 
+
         #luk {
-            position: fixed;
-            top 0;
-            right: 8em;
+            text-align: right;
             background-color: white;
             color: black;
             border-radius: 5px;
             padding: 1em;
+
+        }
+
+        #popuptekst h2 {
+            text-align: center;
         }
 
         #popuptekst {}
 
-        #billede {
+
+        #billede img {
             max-width: 100%;
-            height: auto;
         }
 
+
+        @media only screen and (min-width:950px) {
+            #billede img {
+                max-width: 50%;
+            }
+
+            #billede {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
 <body>
     <section id="popup">
         <article>
-            <div id="luk">X</div>
-            <div id="billede">
-                <img src="" alt="">
-            </div>
+
             <div id="popuptekst">
+                <div id="luk">X</div>
                 <h2>Navn</h2>
+                <div id="billede">
+                    <img src="mad" alt="mad">
+                </div>
+
                 <p>Beskrivelse: <span class="lang"></span></p>
                 <p>Oprindelse: <span class="oprindelse"></span></p>
                 <p>Pris: <span class="pris"></span></p>
@@ -108,7 +125,6 @@
         </article>
     </section>
 
-    <img src="startbillede.png" alt="splashbillede">
     <h1>Bistro Babushka</h1>
     <h2>Menu</h2>
     <header>
@@ -119,6 +135,7 @@
         <button class="filter" data-køn="drikkevarer">Drikkevarer</button>
     </header>
     <section id="liste">
+
     </section>
 
     <template>
@@ -194,8 +211,5 @@
             vis();
         }
         hentdata();
-
     </script>
-</body>
-
-</html>
+</body></html>
